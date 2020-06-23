@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  minesweeper
 //
-//  Created by Ben Zobrist on 6/18/20.
+//  Created by Ben Zobrist on 6/23/20.
 //  Copyright © 2020 Ben Zobrist. All rights reserved.
 //
 
