@@ -32,8 +32,30 @@ struct MineSweeperGame {
         
     }
     
-    // MARK: - Intents
-    mutating func populateBombs(excluding cell: Cell) {
+    private func getNeighbors(of point: Point) -> [Point] {
+        var possibleNeighbors = [Point(x: point.x-1, y: point.y-1),
+                                 Point(x: point.x  , y: point.y-1),
+                                 Point(x: point.x+1, y: point.y-1),
+                                 Point(x: point.x-1, y: point.y),
+                                 /*Point(x: point.x  , y: point.y),*/
+                                 Point(x: point.x+1, y: point.y),
+                                 Point(x: point.x-1, y: point.y+1),
+                                 Point(x: point.x  , y: point.y+1),
+                                 Point(x: point.x+1, y: point.y+1)]
+        
+        for candidate in possibleNeighbors {
+            if candidate.x < 0 || candidate.y < 0 {
+                possibleNeighbors.removeFirstOccurance(of: candidate)
+            }
+            if candidate.x >= width || candidate.y >= height {
+                possibleNeighbors.removeFirstOccurance(of: candidate)
+            }
+        }
+        
+        return possibleNeighbors
+    }
+    
+    private mutating func populateBombs(excluding cell: Cell) {
         // Generate all the bombs, but prevent the excluded card from being a bomb
         var numBombsAdded = 0
         while numBombsAdded != numBombs {
@@ -41,15 +63,23 @@ struct MineSweeperGame {
             let cellAtLocation = cells[(location.y*width)+location.x]
             if location != cell.location && !cellAtLocation.isMine {
                 cells[(location.y*width)+location.x].isMine = true
+                
+                let cellNeighbors = getNeighbors(of: location)
+                for n in cellNeighbors {
+                    let locationOfNeighbor = cells.findIndexOfPoint(n)
+                    cells[locationOfNeighbor!].numAdjacentMines += 1
+                }
                 numBombsAdded += 1
             }
         }
     }
+    // MARK: - Intents
     
     mutating func choose(cell: Cell) {
         // Populate field as needed
         if !playing {
             populateBombs(excluding: cell)
+            playing = true
         }
         
         // Flip over card
@@ -65,7 +95,7 @@ struct MineSweeperGame {
     struct Cell: Identifiable {
         var id: Int
         var location: Point
-        var isRevealed: Bool = true
+        var isRevealed: Bool = false
         var numAdjacentMines: Int = 0
         var isMine: Bool = false
     }
