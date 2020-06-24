@@ -73,6 +73,13 @@ struct MineSweeperGame {
             }
         }
     }
+    
+    private mutating func revealAllCells() {
+        for c in cells {
+            let cIndex = cells.findIndexOfPoint(c.location)
+            cells[cIndex!].isRevealed = true
+        }
+    }
     // MARK: - Intents
     
     mutating func choose(cell: Cell) {
@@ -81,15 +88,26 @@ struct MineSweeperGame {
             populateBombs(excluding: cell)
             playing = true
         }
+        let index = cells.firstIndex(matching: cell)
+        
         
         // Flip over card
-        if !cell.isRevealed {
-            let index = cells.firstIndex(matching: cell)
-            cells[index!].isRevealed = true
+        if cells[index!].isMine { // Flip over ALL cards
+            revealAllCells()
         }
-        
-        // MARK: TODO: Flip over adjacent cards if we don't have neighbors
-        
+        else if !cells[index!].isRevealed { // Flip over selected card
+            cells[index!].isRevealed = true
+            
+            // flip over adjacent cards if current card has no neighboring mines
+            let neighbors = getNeighbors(of: cell.location)
+            if cells[index!].numAdjacentMines == 0 {
+                for n in neighbors {
+                    let nIndex = cells.findIndexOfPoint(n)
+                    choose(cell: cells[nIndex!])
+                }
+            }
+        }
+                
     }
     
     struct Cell: Identifiable {
