@@ -9,7 +9,7 @@
 import Foundation
 
 class MineSweeperViewModel: ObservableObject {
-    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 45)
+    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(height: 13, width: 13, numBombs: 34)
     
     private static func createMineSweeperGame(height: Int, width: Int, numBombs: Int) -> MineSweeperGame {
         MineSweeperGame(height: height, width: width, numBombs: numBombs)
@@ -47,6 +47,6 @@ class MineSweeperViewModel: ObservableObject {
     }
     
     func resetGame() {
-        game = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 45)
+        game = MineSweeperViewModel.createMineSweeperGame(height: 13, width: 13, numBombs: 34)
     }
 }

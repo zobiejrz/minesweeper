@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel: MineSweeperViewModel
-    @State var gridSize : (rows: Int, columns: Int) = (rows: 15, columns: 15)
+    @State var gridSize : (rows: Int, columns: Int) = (rows: 13, columns: 13)
     @State var flagMode: Bool = false
     
     var body: some View {
@@ -32,7 +32,7 @@ struct ContentView: View {
                     .foregroundColor(Color.gray)
                     .padding()
             }
-                .frame(width: 1000, height: 1000, alignment: .center)
+                .frame(width: 700, height: 700, alignment: .center)
             
             Toggle(isOn: $flagMode) {
                 Text("Flag Mode")
