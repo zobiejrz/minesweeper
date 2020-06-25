@@ -10,9 +10,11 @@ import SwiftUI
 
 struct Cardify: AnimatableModifier {
     var rotation : Double
+    var flagStyle: MineSweeperGame.Cell.FlagStyle
     
-    init (isFaceUp: Bool) {
+    init (isFaceUp: Bool, flagStyle flag: MineSweeperGame.Cell.FlagStyle) {
         rotation = isFaceUp ? 0 : 180
+        flagStyle = flag
     }
     
     
@@ -33,7 +35,19 @@ struct Cardify: AnimatableModifier {
                 content
             }
                 .opacity(isFaceUp ? 1 : 0)
-            RoundedRectangle(cornerRadius: 10.0).fill()
+            Group {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10.0).fill()
+                    if flagStyle == .flag {
+                        Text("🚩")
+                            .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
+                    }
+                    else if flagStyle == .question{
+                        Text("❓")
+                            .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
+                    }
+                }
+            }
                 .opacity(isFaceUp ? 0 : 1)
         }
         .rotation3DEffect(Angle.degrees(rotation), axis: (0, 1, 0))
@@ -46,7 +60,7 @@ struct Cardify: AnimatableModifier {
 }
 
 extension View {
-    func cardify(isFaceUp: Bool) -> some View {
-        self.modifier(Cardify(isFaceUp: isFaceUp))
+    func cardify(isFaceUp: Bool, flagStyle: MineSweeperGame.Cell.FlagStyle) -> some View {
+        self.modifier(Cardify(isFaceUp: isFaceUp, flagStyle: flagStyle))
     }
 }

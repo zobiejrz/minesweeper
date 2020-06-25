@@ -55,6 +55,25 @@ struct MineSweeperGame {
         return possibleNeighbors
     }
     
+    private mutating func populateBombs() {
+        // Generate all the bombs regardless of points
+        var numBombsAdded = 0
+        while numBombsAdded != numBombs {
+            let location = Point.random(maxWidth: width, maxHeight: height)
+            let cellAtLocation = cells[(location.y*width)+location.x]
+            if !cellAtLocation.isMine {
+                cells[(location.y*width)+location.x].isMine = true
+                
+                let cellNeighbors = getNeighbors(of: location)
+                for n in cellNeighbors {
+                    let locationOfNeighbor = cells.findIndexOfPoint(n)
+                    cells[locationOfNeighbor!].numAdjacentMines += 1
+                }
+                numBombsAdded += 1
+            }
+        }
+    }
+    
     private mutating func populateBombs(excluding cell: Cell) {
         // Generate all the bombs, but prevent the excluded card from being a bomb
         var numBombsAdded = 0
@@ -110,12 +129,29 @@ struct MineSweeperGame {
                 
     }
     
+    mutating func flag (cell: Cell, with flag: Cell.FlagStyle) {
+        // If we flag a cell first, we don't get the knowledge that the cell we picked is safe
+        if !playing {
+            populateBombs()
+            playing = true
+        }
+        
+        let indexOfCell = cells.firstIndex(matching: cell)
+        
+        if cell.flag != flag {
+            cells[indexOfCell!].flag = flag
+        }
+    }
+    
     struct Cell: Identifiable {
         var id: Int
         var location: Point
         var isRevealed: Bool = false
         var numAdjacentMines: Int = 0
         var isMine: Bool = false
+        var flag: FlagStyle = .none
+        
+        enum FlagStyle { case flag, question, none }
     }
     
     struct Point: Equatable {

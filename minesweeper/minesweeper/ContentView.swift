@@ -11,21 +11,34 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel: MineSweeperViewModel
     @State var gridSize : (rows: Int, columns: Int) = (rows: 15, columns: 15)
+    @State var flagMode: Bool = false
+    
     var body: some View {
         VStack {
             VStack {
                 Grid (viewModel.cells, numRows: gridSize.rows, numColumn: gridSize.columns) { cell in
                     CardView(cell: cell).onTapGesture {
                         withAnimation(.linear) {
-                            self.viewModel.choose(cell: cell)
+                            if !self.flagMode {
+                                self.viewModel.choose(cell: cell)
+                            }
+                            else {
+                                self.viewModel.flag(cell: cell)
+                            }
                         }
                     }
                         .padding(5)
                 }
-                .foregroundColor(Color.green)
-                .padding()
+                    .foregroundColor(Color.gray)
+                    .padding()
             }
-            .frame(width: 1000, height: 1000, alignment: .center)
+                .frame(width: 1000, height: 1000, alignment: .center)
+            
+            Toggle(isOn: $flagMode) {
+                Text("Flag Mode")
+            }
+                .frame(width: 150, height: nil, alignment: .center)
+                .padding()
             
             Button(action: {
                 withAnimation(.easeInOut) {
@@ -36,7 +49,7 @@ struct ContentView: View {
                 Text("New Game")
             }
         }
-        .padding()
+            .padding()
     }
 }
 
@@ -53,11 +66,11 @@ struct CardView: View {
     private func body(for size: CGSize) -> some View {
         ZStack {
             if cell.isRevealed{
-                Text(self.cell.isMine ? "💣" : "\(self.cell.numAdjacentMines)")
+                Text(self.cell.isMine ? "💣" : (self.cell.numAdjacentMines != 0 ? "\(self.cell.numAdjacentMines)" : " "))
                     .font(Font.system(size: fontSize(for: size)))
             }
         }
-        .cardify(isFaceUp: cell.isRevealed)
+        .cardify(isFaceUp: cell.isRevealed, flagStyle: cell.flag)
     }
     // MARK: - Drawing Constants
     

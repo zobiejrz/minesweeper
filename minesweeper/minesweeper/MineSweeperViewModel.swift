@@ -9,7 +9,7 @@
 import Foundation
 
 class MineSweeperViewModel: ObservableObject {
-    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 70)
+    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 45)
     
     private static func createMineSweeperGame(height: Int, width: Int, numBombs: Int) -> MineSweeperGame {
         MineSweeperGame(height: height, width: width, numBombs: numBombs)
@@ -28,7 +28,25 @@ class MineSweeperViewModel: ObservableObject {
         game.choose(cell: cell)
     }
     
+    func flag (cell: MineSweeperGame.Cell) {
+        print(cell)
+        
+        var flag: MineSweeperGame.Cell.FlagStyle = cell.flag
+        
+        if (flag == .none) {
+            flag = .flag
+        }
+        else if (flag == .flag) {
+            flag = .question
+        }
+        else {
+            flag = .none
+        }
+        
+        game.flag(cell: cell, with: flag)
+    }
+    
     func resetGame() {
-        game = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 70)
+        game = MineSweeperViewModel.createMineSweeperGame(height: 15, width: 15, numBombs: 45)
     }
 }
