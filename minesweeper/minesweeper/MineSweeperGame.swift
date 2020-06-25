@@ -93,13 +93,14 @@ struct MineSweeperGame {
         }
     }
     
-    private mutating func revealAllCells() {
+    // MARK: - Intents
+    
+    mutating func revealAllCells() {
         for c in cells {
             let cIndex = cells.findIndexOfPoint(c.location)
             cells[cIndex!].isRevealed = true
         }
     }
-    // MARK: - Intents
     
     mutating func choose(cell: Cell) {
         // Populate field as needed

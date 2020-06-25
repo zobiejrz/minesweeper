@@ -10,46 +10,91 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel: MineSweeperViewModel
-    @State var gridSize : (rows: Int, columns: Int) = (rows: 13, columns: 13)
     @State var flagMode: Bool = false
+    @State var difficulty: Difficulty = .normal
+    @State var currentGridSize: (rows: Int, columns: Int) = (rows: 10, columns: 10)
+    @State var showWonAlert: Bool = false
+    
+    var gridSizes: (rows: Int, columns: Int) {
+        if difficulty == .easy {
+            return (rows: 7, columns: 7)
+        }
+        else if difficulty == .normal {
+            return (rows: 10, columns: 10)
+        }
+        else {
+            return (rows: 13, columns: 13)
+        }
+    }
     
     var body: some View {
         VStack {
-            VStack {
-                Grid (viewModel.cells, numRows: gridSize.rows, numColumn: gridSize.columns) { cell in
-                    CardView(cell: cell).onTapGesture {
-                        withAnimation(.linear) {
-                            if !self.flagMode {
-                                self.viewModel.choose(cell: cell)
-                            }
-                            else {
-                                self.viewModel.flag(cell: cell)
+            HStack {
+                
+                Picker(selection: $difficulty, label: Text("Difficulty")) {
+                    Text("Easy").tag(Difficulty.easy)
+                    Text("Normal").tag(Difficulty.normal)
+                    Text("Expert").tag(Difficulty.expert)
+                }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.horizontal)
+                
+                Button(action: {
+                    withAnimation {
+                        self.currentGridSize = self.gridSizes
+                        self.viewModel.resetGame(difficulty: self.difficulty)
+                    }
+                })
+                {
+                    Text("New Game")
+                }
+                    .padding(.horizontal)
+            }
+            Spacer()
+                Toggle(isOn: $flagMode) {
+                    Text("Flag Mode")
+                }
+                .frame(width: 200, height: nil, alignment: .center)
+                VStack {
+                    Grid (viewModel.cells, numRows: currentGridSize.rows, numColumn: currentGridSize.columns) { cell in
+                        CardView(cell: cell).onTapGesture {
+                            withAnimation(.linear) {
+                                if !self.flagMode {
+                                    self.viewModel.choose(cell: cell)
+                                }
+                                else {
+                                    self.viewModel.flag(cell: cell)
+                                }
+                                
+                                if self.viewModel.gameWon {
+                                    self.viewModel.revealAllCells()
+                                    self.showWonAlert = true
+                                }
                             }
                         }
+                            .padding(5)
                     }
-                        .padding(5)
+                        .foregroundColor(Color.gray)
+                        .padding()
                 }
-                    .foregroundColor(Color.gray)
-                    .padding()
-            }
-                .frame(width: 700, height: 700, alignment: .center)
+                    .frame(width: 700, height: 700, alignment: .center)
+                Text("\(String(format: "%02d", self.viewModel.numBombs)) x 💣")
+                    .font(.largeTitle)
+                    .frame(width: 200, height: nil, alignment: .trailing)
+
+                Text("\(String(format: "%02d", self.viewModel.numFlags)) x 🚩")
+                    .font(.largeTitle)
+                    .frame(width: 200, height: nil, alignment: .trailing)
+
+
+
+            Spacer()
             
-            Toggle(isOn: $flagMode) {
-                Text("Flag Mode")
-            }
-                .frame(width: 150, height: nil, alignment: .center)
-                .padding()
-            
-            Button(action: {
-                withAnimation(.easeInOut) {
-                    self.viewModel.resetGame()
-                }
-            })
-            {
-                Text("New Game")
-            }
         }
             .padding()
+        .alert(isPresented: $showWonAlert) {
+                Alert(title: Text("Congrats!"), message: Text("You found all the bombs!"), dismissButton: .default(Text("Ok")))
+            }
     }
 }
 
