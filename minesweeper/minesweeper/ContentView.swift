@@ -10,19 +10,22 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel: MineSweeperViewModel
-    @State var gridSize : (rows: Int, columns: Int) = (rows: 5, columns: 5)
+    @State var gridSize : (rows: Int, columns: Int) = (rows: 15, columns: 15)
     var body: some View {
         VStack {
-            Grid (viewModel.cells, numRows: gridSize.rows, numColumn: gridSize.columns) { cell in
-                CardView(cell: cell).onTapGesture {
-                    withAnimation(.linear) {
-                        self.viewModel.choose(cell: cell)
+            VStack {
+                Grid (viewModel.cells, numRows: gridSize.rows, numColumn: gridSize.columns) { cell in
+                    CardView(cell: cell).onTapGesture {
+                        withAnimation(.linear) {
+                            self.viewModel.choose(cell: cell)
+                        }
                     }
+                        .padding(5)
                 }
-                    .padding(5)
+                .foregroundColor(Color.green)
+                .padding()
             }
-            .foregroundColor(Color.green)
-            .padding()
+            .frame(width: 1000, height: 1000, alignment: .center)
             
             Button(action: {
                 withAnimation(.easeInOut) {
