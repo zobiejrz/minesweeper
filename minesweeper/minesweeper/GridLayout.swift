@@ -1,9 +1,9 @@
 //
 //  GridLayout.swift
-//  Memorize
+//  minesweeper
 //
-//  Created by CS193p Instructor.
-//  Copyright © 2020 Stanford University. All rights reserved.
+//  Created by Ben Zobrist on 6/24/20.
+//  Copyright © 2020 Ben Zobrist. All rights reserved.
 //
 
 import SwiftUI
@@ -13,40 +13,26 @@ struct GridLayout {
     private(set) var rowCount: Int = 0
     private(set) var columnCount: Int = 0
     
-    init(itemCount: Int, nearAspectRatio desiredAspectRatio: Double = 1, in size: CGSize) {
+    init(itemCount: Int, numRows rows: Int, numColumns cols: Int, in size: CGSize) {
         self.size = size
         // if our size is zero width or height or the itemCount is not > 0
         // then we have no work to do (because our rowCount & columnCount will be zero)
-        guard size.width != 0, size.height != 0, itemCount > 0 else { return }
-        // find the bestLayout
-        // i.e., one which results in cells whose aspectRatio
-        // has the smallestVariance from desiredAspectRatio
-        // not necessarily most optimal code to do this, but easy to follow (hopefully)
-        var bestLayout: (rowCount: Int, columnCount: Int) = (1, itemCount)
-        var smallestVariance: Double?
-        let sizeAspectRatio = abs(Double(size.width/size.height))
-        for rows in 1...itemCount {
-            let columns = (itemCount / rows) + (itemCount % rows > 0 ? 1 : 0)
-            if (rows - 1) * columns < itemCount {
-                let itemAspectRatio = sizeAspectRatio * (Double(rows)/Double(columns))
-                let variance = abs(itemAspectRatio - desiredAspectRatio)
-                if smallestVariance == nil || variance < smallestVariance! {
-                    smallestVariance = variance
-                    bestLayout = (rowCount: rows, columnCount: columns)
-                }
-            }
-        }
-        rowCount = bestLayout.rowCount
-        columnCount = bestLayout.columnCount
+        guard itemCount > 0 else { return }
+        
+        // We already know how many rows/columns there needs to be, so extra
+        // math is not needed to calculate it
+        rowCount = rows
+        columnCount = cols
     }
     
     var itemSize: CGSize {
         if rowCount == 0 || columnCount == 0 {
             return CGSize.zero
         } else {
+            let sideLength = min(size.width / CGFloat(columnCount), size.height / CGFloat(rowCount))
             return CGSize(
-                width: size.width / CGFloat(columnCount),
-                height: size.height / CGFloat(rowCount)
+                width: sideLength,
+                height: sideLength
             )
         }
     }
@@ -62,3 +48,4 @@ struct GridLayout {
         }
     }
 }
+

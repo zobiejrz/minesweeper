@@ -15,10 +15,10 @@
 		AF24FB1A24A29C380021DC2A /* MineSweeperGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */; };
 		AF28EA4F24A2BF4100C67AE0 /* Array+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */; };
 		AF28EA5124A2CEF900C67AE0 /* Array+Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */; };
+		AF410B6924A41F8800700BB9 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF410B6824A41F8800700BB9 /* GridLayout.swift */; };
+		AF7F655D24A4271B00BEA73A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F655C24A4271B00BEA73A /* ContentView.swift */; };
 		AFA8FBA024A2A4D9006FBD39 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */; };
-		AFA8FBA124A2A4D9006FBD39 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9D24A2A4D8006FBD39 /* GridLayout.swift */; };
 		AFA8FBA224A2A4D9006FBD39 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */; };
-		AFA8FBA324A2A4D9006FBD39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9F24A2A4D9006FBD39 /* ContentView.swift */; };
 		AFA8FBA524A2A56A006FBD39 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */; };
 		AFCF3A5A24A2A2F700286DF5 /* MineSweeperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -34,10 +34,10 @@
 		AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSweeperGame.swift; sourceTree = "<group>"; };
 		AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Remove.swift"; sourceTree = "<group>"; };
 		AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Point.swift"; sourceTree = "<group>"; };
+		AF410B6824A41F8800700BB9 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
+		AF7F655C24A4271B00BEA73A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
-		AFA8FB9D24A2A4D8006FBD39 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		AFA8FB9F24A2A4D9006FBD39 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../../../../../Desktop/minesweeper/minesweeper/ContentView.swift; sourceTree = "<group>"; };
 		AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSweeperViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,12 +74,12 @@
 			children = (
 				AF24FB0524A29C180021DC2A /* AppDelegate.swift */,
 				AF24FB0724A29C180021DC2A /* SceneDelegate.swift */,
-				AFA8FB9F24A2A4D9006FBD39 /* ContentView.swift */,
+				AF7F655C24A4271B00BEA73A /* ContentView.swift */,
 				AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */,
 				AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */,
 				AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */,
 				AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */,
-				AFA8FB9D24A2A4D8006FBD39 /* GridLayout.swift */,
+				AF410B6824A41F8800700BB9 /* GridLayout.swift */,
 				AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */,
 				AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */,
 				AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */,
@@ -173,15 +173,15 @@
 			files = (
 				AF28EA5124A2CEF900C67AE0 /* Array+Point.swift in Sources */,
 				AFA8FBA024A2A4D9006FBD39 /* Cardify.swift in Sources */,
+				AF7F655D24A4271B00BEA73A /* ContentView.swift in Sources */,
 				AF28EA4F24A2BF4100C67AE0 /* Array+Remove.swift in Sources */,
+				AF410B6924A41F8800700BB9 /* GridLayout.swift in Sources */,
 				AF24FB1A24A29C380021DC2A /* MineSweeperGame.swift in Sources */,
 				AF24FB0624A29C180021DC2A /* AppDelegate.swift in Sources */,
 				AFA8FBA224A2A4D9006FBD39 /* Grid.swift in Sources */,
 				AFCF3A5A24A2A2F700286DF5 /* MineSweeperViewModel.swift in Sources */,
 				AFA8FBA524A2A56A006FBD39 /* Array+Identifiable.swift in Sources */,
-				AFA8FBA324A2A4D9006FBD39 /* ContentView.swift in Sources */,
 				AF24FB0824A29C180021DC2A /* SceneDelegate.swift in Sources */,
-				AFA8FBA124A2A4D9006FBD39 /* GridLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,15 +12,17 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
     
     private var items: [Item]
     private var viewForItem: (Item) -> ItemView
+    private var gridSize: (rows: Int, columns: Int)
     
-    init (_ items: [Item], viewForItem: @escaping (Item) -> ItemView) {
+    init (_ items: [Item], numRows rows: Int, numColumn cols: Int, viewForItem: @escaping (Item) -> ItemView) {
         self.items = items
         self.viewForItem = viewForItem
+        self.gridSize = (rows: rows, columns: cols)
     }
     
     var body: some View {
         GeometryReader { geometry in
-            self.body(for: GridLayout(itemCount: self.items.count, in: geometry.size))
+            self.body(for: GridLayout(itemCount: self.items.count, numRows: self.gridSize.rows, numColumns: self.gridSize.columns, in: geometry.size))
         }
     }
     
