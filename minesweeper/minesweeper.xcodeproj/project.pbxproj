@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		AF0116AA24A437EB005C8B5B /* minesweeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minesweeper.entitlements; sourceTree = "<group>"; };
-		AF24FB0224A29C180021DC2A /* minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF24FB0224A29C180021DC2A /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24FB0524A29C180021DC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF24FB0724A29C180021DC2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AF24FB0B24A29C200021DC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		AF24FB0324A29C180021DC2A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF24FB0224A29C180021DC2A /* minesweeper.app */,
+				AF24FB0224A29C180021DC2A /* Minesweeper.app */,
 			);
 			name = Products;
 			path = ..;
@@ -119,7 +119,7 @@
 			);
 			name = minesweeper;
 			productName = minesweeper;
-			productReference = AF24FB0224A29C180021DC2A /* minesweeper.app */;
+			productReference = AF24FB0224A29C180021DC2A /* Minesweeper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -330,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Minesweeper;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -352,7 +352,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Minesweeper;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
