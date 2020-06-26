@@ -14,10 +14,10 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
     private var viewForItem: (Item) -> ItemView
     private var gridSize: (rows: Int, columns: Int)
     
-    init (_ items: [Item], numRows rows: Int, numColumn cols: Int, viewForItem: @escaping (Item) -> ItemView) {
+    init (_ items: [Item], size: (rows: Int, columns: Int), viewForItem: @escaping (Item) -> ItemView) {
         self.items = items
         self.viewForItem = viewForItem
-        self.gridSize = (rows: rows, columns: cols)
+        self.gridSize = size
     }
     
     var body: some View {

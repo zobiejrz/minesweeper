@@ -51,12 +51,22 @@ struct ContentView: View {
                     .padding(.horizontal)
             }
             Spacer()
-                Toggle(isOn: $flagMode) {
-                    Text("Flag Mode")
-                }
-                .frame(width: 200, height: nil, alignment: .center)
+            HStack {
                 VStack {
-                    Grid (viewModel.cells, numRows: currentGridSize.rows, numColumn: currentGridSize.columns) { cell in
+                    Button(action: {
+                        withAnimation {
+                            self.flagMode.toggle()
+                        }
+                    })
+                    {
+                        Text("Flag Mode")
+                            .font(.title)
+                            .foregroundColor(self.flagMode ? .green : .gray)
+                    }
+                }
+            
+                VStack {
+                    Grid (viewModel.cells, size: currentGridSize) { cell in
                         CardView(cell: cell).onTapGesture {
                             withAnimation(.linear) {
                                 if !self.flagMode {
@@ -77,16 +87,20 @@ struct ContentView: View {
                         .foregroundColor(Color.gray)
                         .padding()
                 }
+                    
                     .frame(width: 700, height: 700, alignment: .center)
-                Text("\(String(format: "%02d", self.viewModel.numBombs)) x 💣")
-                    .font(.largeTitle)
-                    .frame(width: 200, height: nil, alignment: .trailing)
+                
+                VStack {
+                    Text("💣 x \(String(format: "%02d", self.viewModel.numBombs)) ")
+                        .font(.largeTitle)
+//                        .frame(width: 250, height: nil, alignment: .leading)
 
-                Text("\(String(format: "%02d", self.viewModel.numFlags)) x 🚩")
-                    .font(.largeTitle)
-                    .frame(width: 200, height: nil, alignment: .trailing)
+                    Text("🚩 x \(String(format: "%02d", self.viewModel.numFlags))")
+                        .font(.largeTitle)
+//                        .frame(width: 250, height: nil, alignment: .leading)
+                }
 
-
+            }
 
             Spacer()
             
