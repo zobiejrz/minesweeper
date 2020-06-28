@@ -57,15 +57,6 @@ struct ContentView: View {
                 VStack {
                     Grid (viewModel.cells, size: currentGridSize) { cell in
                         CardView(cell: cell)
-//                            .onTapGesture(count: 2) {
-//                                withAnimation(.linear) {
-//                                    self.viewModel.flag(cell: cell)
-//                                    if self.viewModel.gameWon {
-//                                        self.viewModel.revealAllCells()
-//                                        self.showWonAlert = true
-//                                    }
-//                                }
-//                            }
                             .onTapGesture(count: 1) {
                                 withAnimation(.linear) {
                                     if cell.flag == .none {
