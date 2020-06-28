@@ -100,7 +100,7 @@ class MineSweeperViewModel: ObservableObject {
             game = MineSweeperViewModel.createMineSweeperGame(height: 10, width: 10, numBombs: 20)
         }
         else if difficulty == .expert {
-            game = MineSweeperViewModel.createMineSweeperGame(height: 13, width: 13, numBombs: 50)
+            game = MineSweeperViewModel.createMineSweeperGame(height: 13, width: 13, numBombs: 30)
         }
     }
     
