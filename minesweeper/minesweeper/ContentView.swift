@@ -30,7 +30,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                
+                Text("💣 x \(String(format: "%02d", self.viewModel.numBombs)) ")
+                Text("🚩 x \(String(format: "%02d", self.viewModel.numFlags))")
                 Picker(selection: $difficulty, label: Text("Difficulty")) {
                     Text("Easy").tag(Difficulty.easy)
                     Text("Normal").tag(Difficulty.normal)
@@ -52,36 +53,47 @@ struct ContentView: View {
             }
             Spacer()
             HStack {
-                VStack {
-                    Button(action: {
-                        withAnimation {
-                            self.flagMode.toggle()
-                        }
-                    })
-                    {
-                        Text("Flag Mode")
-                            .font(.title)
-                            .foregroundColor(self.flagMode ? .green : .gray)
-                    }
-                }
             
                 VStack {
                     Grid (viewModel.cells, size: currentGridSize) { cell in
-                        CardView(cell: cell).onTapGesture {
-                            withAnimation(.linear) {
-                                if !self.flagMode {
-                                    self.viewModel.choose(cell: cell)
-                                }
-                                else {
-                                    self.viewModel.flag(cell: cell)
-                                }
-                                
-                                if self.viewModel.gameWon {
-                                    self.viewModel.revealAllCells()
-                                    self.showWonAlert = true
+                        CardView(cell: cell)
+//                            .onTapGesture(count: 2) {
+//                                withAnimation(.linear) {
+//                                    self.viewModel.flag(cell: cell)
+//                                    if self.viewModel.gameWon {
+//                                        self.viewModel.revealAllCells()
+//                                        self.showWonAlert = true
+//                                    }
+//                                }
+//                            }
+                            .onTapGesture(count: 1) {
+                                withAnimation(.linear) {
+                                    if cell.flag == .none {
+                                        self.viewModel.choose(cell: cell)
+                                    }
+                                    else {
+                                        self.viewModel.flag(cell: cell)
+                                    }
+//                                    self.viewModel.flag(cell: cell)
+                                    
+                                    if self.viewModel.gameWon {
+                                        self.viewModel.revealAllCells()
+                                        self.showWonAlert = true
+                                    }
                                 }
                             }
-                        }
+                            .onLongPressGesture {
+                                withAnimation(.linear) {
+//                                    self.viewModel.choose(cell: cell)
+                                    self.viewModel.flag(cell: cell)
+
+                                    if self.viewModel.gameWon {
+                                        self.viewModel.revealAllCells()
+                                        self.showWonAlert = true
+                                    }
+                                }
+
+                            }
                             .padding(5)
                     }
                         .foregroundColor(Color.gray)
@@ -89,16 +101,6 @@ struct ContentView: View {
                 }
                     
                     .frame(width: 700, height: 700, alignment: .center)
-                
-                VStack {
-                    Text("💣 x \(String(format: "%02d", self.viewModel.numBombs)) ")
-                        .font(.largeTitle)
-//                        .frame(width: 250, height: nil, alignment: .leading)
-
-                    Text("🚩 x \(String(format: "%02d", self.viewModel.numFlags))")
-                        .font(.largeTitle)
-//                        .frame(width: 250, height: nil, alignment: .leading)
-                }
 
             }
 
