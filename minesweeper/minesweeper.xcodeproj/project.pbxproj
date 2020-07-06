@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF24CF2324B2D0A800695808 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24CF2224B2D0A800695808 /* Color.swift */; };
+		AF24CF2524B2D63600695808 /* GameViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24CF2424B2D63600695808 /* GameViews.swift */; };
 		AF24FB0624A29C180021DC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB0524A29C180021DC2A /* AppDelegate.swift */; };
 		AF24FB0824A29C180021DC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB0724A29C180021DC2A /* SceneDelegate.swift */; };
 		AF24FB0C24A29C200021DC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF24FB0B24A29C200021DC2A /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		AF0116AA24A437EB005C8B5B /* minesweeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minesweeper.entitlements; sourceTree = "<group>"; };
+		AF24CF2224B2D0A800695808 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		AF24CF2424B2D63600695808 /* GameViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViews.swift; sourceTree = "<group>"; };
 		AF24FB0224A29C180021DC2A /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF24FB0524A29C180021DC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF24FB0724A29C180021DC2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 				AF0116AA24A437EB005C8B5B /* minesweeper.entitlements */,
 				AF24FB0524A29C180021DC2A /* AppDelegate.swift */,
 				AF24FB0724A29C180021DC2A /* SceneDelegate.swift */,
+				AF24CF2424B2D63600695808 /* GameViews.swift */,
 				AF7F655C24A4271B00BEA73A /* ContentView.swift */,
 				AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */,
 				AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */,
@@ -85,6 +90,7 @@
 				AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */,
 				AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */,
 				AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */,
+				AF24CF2224B2D0A800695808 /* Color.swift */,
 				AF24FB0324A29C180021DC2A /* Products */,
 				AF24FB0B24A29C200021DC2A /* Assets.xcassets */,
 				AF24FB1024A29C200021DC2A /* LaunchScreen.storyboard */,
@@ -177,7 +183,9 @@
 				AFA8FBA024A2A4D9006FBD39 /* Cardify.swift in Sources */,
 				AF7F655D24A4271B00BEA73A /* ContentView.swift in Sources */,
 				AF28EA4F24A2BF4100C67AE0 /* Array+Remove.swift in Sources */,
+				AF24CF2524B2D63600695808 /* GameViews.swift in Sources */,
 				AF410B6924A41F8800700BB9 /* GridLayout.swift in Sources */,
+				AF24CF2324B2D0A800695808 /* Color.swift in Sources */,
 				AF24FB1A24A29C380021DC2A /* MineSweeperGame.swift in Sources */,
 				AF24FB0624A29C180021DC2A /* AppDelegate.swift in Sources */,
 				AFA8FBA224A2A4D9006FBD39 /* Grid.swift in Sources */,
@@ -329,7 +337,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
 				PRODUCT_NAME = Minesweeper;
 				SUPPORTS_MACCATALYST = YES;
@@ -352,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
 				PRODUCT_NAME = Minesweeper;
 				SUPPORTS_MACCATALYST = YES;

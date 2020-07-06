@@ -11,98 +11,35 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel: MineSweeperViewModel
     @State var flagMode: Bool = false
-    @State var difficulty: Difficulty = .normal
-    @State var currentGridSize: (rows: Int, columns: Int) = (rows: 10, columns: 10)
-    @State var showWonAlert: Bool = false
+    @State var showMenu: Bool = false
+    @State var showNewGameView: Bool = false
+
     
-    var gridSizes: (rows: Int, columns: Int) {
-        if difficulty == .easy {
-            return (rows: 7, columns: 7)
-        }
-        else if difficulty == .normal {
-            return (rows: 10, columns: 10)
-        }
-        else {
-            return (rows: 13, columns: 13)
-        }
-    }
+//    var gridSizes: (rows: Int, columns: Int) {
+//        if difficulty == .easy {
+//            return (rows: 7, columns: 7)
+//        }
+//        else if difficulty == .normal {
+//            return (rows: 10, columns: 10)
+//        }
+//        else {
+//            return (rows: 13, columns: 13)
+//        }
+//    }
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("💣 x \(String(format: "%02d", self.viewModel.numBombs)) ")
-                Text("🚩 x \(String(format: "%02d", self.viewModel.numFlags))")
-                Picker(selection: $difficulty, label: Text("Difficulty")) {
-                    Text("Easy").tag(Difficulty.easy)
-                    Text("Normal").tag(Difficulty.normal)
-                    Text("Expert").tag(Difficulty.expert)
-                }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding(.horizontal)
-                
-                Button(action: {
-                    withAnimation {
-                        self.currentGridSize = self.gridSizes
-                        self.viewModel.resetGame(difficulty: self.difficulty)
-                    }
-                })
-                {
-                    Text("New Game")
-                }
-                    .padding(.horizontal)
+        ZStack {
+            VStack {
+                TopBar(viewModel: viewModel, showMenu: $showMenu)
+                NewGameView(viewModel: viewModel, showNewGameView: $showNewGameView)
+                Spacer()
+                Game(viewModel: viewModel)
+                Spacer()
             }
-            Spacer()
-            HStack {
-            
-                VStack {
-                    Grid (viewModel.cells, size: currentGridSize) { cell in
-                        CardView(cell: cell)
-                            .onTapGesture(count: 1) {
-                                withAnimation(.linear) {
-                                    if cell.flag == .none {
-                                        self.viewModel.choose(cell: cell)
-                                    }
-                                    else {
-                                        self.viewModel.flag(cell: cell)
-                                    }
-//                                    self.viewModel.flag(cell: cell)
-                                    
-                                    if self.viewModel.gameWon {
-                                        self.viewModel.revealAllCells()
-                                        self.showWonAlert = true
-                                    }
-                                }
-                            }
-                            .onLongPressGesture {
-                                withAnimation(.linear) {
-//                                    self.viewModel.choose(cell: cell)
-                                    self.viewModel.flag(cell: cell)
-
-                                    if self.viewModel.gameWon {
-                                        self.viewModel.revealAllCells()
-                                        self.showWonAlert = true
-                                    }
-                                }
-
-                            }
-                            .padding(5)
-                    }
-                        .foregroundColor(Color.gray)
-                        .padding()
-                }
-                    
-                    .frame(width: 700, height: 700, alignment: .center)
-
-            }
-
-            Spacer()
-            
+            PauseView(viewModel: viewModel, showMenu: $showMenu, showNewGameView: $showNewGameView)
         }
-            .padding()
-        .alert(isPresented: $showWonAlert) {
-                Alert(title: Text("Congrats!"), message: Text("You found all the bombs!"), dismissButton: .default(Text("Ok")))
-            }
     }
+
 }
 
 struct CardView: View {
@@ -120,6 +57,7 @@ struct CardView: View {
             if cell.isRevealed{
                 Text(self.cell.isMine ? "💣" : (self.cell.numAdjacentMines != 0 ? "\(self.cell.numAdjacentMines)" : " "))
                     .font(Font.system(size: fontSize(for: size)))
+                    .foregroundColor(Color.white)
             }
         }
         .cardify(isFaceUp: cell.isRevealed, flagStyle: cell.flag)
@@ -137,6 +75,12 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         let game = MineSweeperViewModel()
         game.choose(cell: game.cells[0])
-        return ContentView(viewModel: game)
+        
+        return Group {
+            ContentView(viewModel: game).previewLayout(.fixed(width: 375, height: 1000))
+                                .environment(\.colorScheme, .dark)
+            ContentView(viewModel: game).previewLayout(.fixed(width: 375, height: 1000))
+                                .environment(\.colorScheme, .light)
+        }
     }
 }

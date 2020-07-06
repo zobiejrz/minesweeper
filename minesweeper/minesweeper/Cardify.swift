@@ -31,25 +31,26 @@ struct Cardify: AnimatableModifier {
         GeometryReader { geometry in
             ZStack {
                 Group {
-                    RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.white)
+                    RoundedRectangle(cornerRadius: self.cornerRadius).fill(Color.gray)
                     RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: self.edgeLineWidth)
                     content
                 }
                 .opacity(self.isFaceUp ? 1 : 0)
                 Group {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 10.0).fill()
-                        if self.flagStyle == .flag {
-                            Text("🚩")
-                                .rotation3DEffect(Angle.degrees(self.rotation), axis: (0, 1, 0))
-                                .font(Font.system(size: self.fontSize(for: geometry.size)))
-                        }
-                        else if self.flagStyle == .question{
-                            Text("❓")
-                                .rotation3DEffect(Angle.degrees(self.rotation), axis: (0, 1, 0))
-                                .font(Font.system(size: self.fontSize(for: geometry.size)))
-                        }
+//                    ZStack {
+                    RoundedRectangle(cornerRadius: self.cornerRadius)
+                    RoundedRectangle(cornerRadius: self.cornerRadius).stroke(lineWidth: self.edgeLineWidth).fill(Color.gray)
+                    if self.flagStyle == .flag {
+                        Text("🚩")
+                            .rotation3DEffect(Angle.degrees(self.rotation), axis: (0, 1, 0))
+                            .font(Font.system(size: self.fontSize(for: geometry.size)))
                     }
+                    else if self.flagStyle == .question{
+                        Text("❓")
+                            .rotation3DEffect(Angle.degrees(self.rotation), axis: (0, 1, 0))
+                            .font(Font.system(size: self.fontSize(for: geometry.size)))
+                    }
+//                    }
                 }
                 .opacity(self.isFaceUp ? 0 : 1)
             }

@@ -9,10 +9,24 @@
 import Foundation
 
 class MineSweeperViewModel: ObservableObject {
-    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(height: 10, width: 10, numBombs: 20)
+    @Published var game: MineSweeperGame = MineSweeperViewModel.createMineSweeperGame(for: .normal)
+    @Published var currentDifficulty: Difficulty = .normal
+    @Published var currentGridSize: (rows: Int, columns: Int) = (rows: 10, columns: 10)
     
-    private static func createMineSweeperGame(height: Int, width: Int, numBombs: Int) -> MineSweeperGame {
+    private static func createMineSweeperGame (height: Int, width: Int, numBombs: Int) -> MineSweeperGame {
         MineSweeperGame(height: height, width: width, numBombs: numBombs)
+    }
+    
+    private static func createMineSweeperGame(for difficulty: Difficulty) -> MineSweeperGame {
+        if difficulty == .easy {
+            return createMineSweeperGame(height: 7, width: 7, numBombs: 10)
+        }
+        else if difficulty == .normal {
+            return createMineSweeperGame(height: 10, width: 10, numBombs: 20)
+        }
+        else {
+            return createMineSweeperGame(height: 13, width: 13, numBombs: 45)
+        }
     }
         
     // MARK: - Access to the Model
@@ -22,13 +36,7 @@ class MineSweeperViewModel: ObservableObject {
     }
     
     var numBombs: Int {
-        var num = 0;
-        
-        for cell in game.cells {
-            num += cell.isMine ? 1 : 0
-        }
-        
-        return num
+        game.numBombs
     }
     
     var numFlags: Int {
@@ -92,16 +100,28 @@ class MineSweeperViewModel: ObservableObject {
         game.flag(cell: cell, with: flag)
     }
     
-    func resetGame(difficulty: Difficulty) {
+    func resetGame (difficulty: Difficulty) {
         if difficulty == .easy {
-            game = MineSweeperViewModel.createMineSweeperGame(height: 7, width: 7, numBombs: 10)
+            currentGridSize = (rows: 7, columns: 7)
+            game = MineSweeperViewModel.createMineSweeperGame(for: currentDifficulty)
         }
         else if difficulty == .normal {
-            game = MineSweeperViewModel.createMineSweeperGame(height: 10, width: 10, numBombs: 20)
+            currentGridSize = (rows: 10, columns: 10)
+            game = MineSweeperViewModel.createMineSweeperGame(for: currentDifficulty)
         }
         else if difficulty == .expert {
-            game = MineSweeperViewModel.createMineSweeperGame(height: 13, width: 13, numBombs: 30)
+            currentGridSize = (rows: 13, columns: 13)
+            game = MineSweeperViewModel.createMineSweeperGame(for: currentDifficulty)
         }
+    }
+    
+    func resetGame (rows: Int, columns: Int, numBombs: Int) {
+        currentGridSize = (rows: rows, columns: columns)
+        game = MineSweeperViewModel.createMineSweeperGame(height: rows, width: columns, numBombs: numBombs)
+    }
+    
+    func restart() {
+        resetGame(difficulty: currentDifficulty)
     }
     
     func revealAllCells() {

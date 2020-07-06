@@ -1,15 +1,53 @@
-import UIKit
+import SwiftUI
 
-var str = "Hello, playground"
-
-for x in 0..<15 {
-    for y in 0..<13 {
-        print(x*13 + y)
+struct myView: View {
+    var body: some View {
+        
+        VStack {
+            Text("Paused")
+                .font(.largeTitle)
+                .foregroundColor(.primary)
+            
+            Button(action: {
+                print("TODO: Resume")
+            })
+            {
+                Text("Resume")
+            }
+            Button(action: {
+                print("TODO: Restart")
+            })
+            {
+                Text("Restart")
+            }
+            Button(action: {
+                print("TODO: New Game")
+            })
+            {
+                Text("New Game")
+            }
+            Button(action: {
+                print("TODO: How to Play")
+            })
+            {
+                Text("How to Play")
+            }
+            Button(action: {
+                print("TODO: Quit")
+            })
+            {
+                Text("Quit")
+            }
+            
+        }
+        .font(.title)
+        .foregroundColor(.secondary)
+        
     }
 }
-/*
-    x*13 + y = z
-    
- 
- 
-*/
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        myView()
+    }
+}
+
