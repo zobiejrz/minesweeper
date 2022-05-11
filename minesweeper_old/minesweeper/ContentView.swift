@@ -13,25 +13,14 @@ struct ContentView: View {
     @State var flagMode: Bool = false
     @State var showMenu: Bool = false
     @State var showNewGameView: Bool = false
-
-    
-//    var gridSizes: (rows: Int, columns: Int) {
-//        if difficulty == .easy {
-//            return (rows: 7, columns: 7)
-//        }
-//        else if difficulty == .normal {
-//            return (rows: 10, columns: 10)
-//        }
-//        else {
-//            return (rows: 13, columns: 13)
-//        }
-//    }
     
     var body: some View {
         ZStack {
             VStack {
                 TopBar(viewModel: viewModel, showMenu: $showMenu)
-                NewGameView(viewModel: viewModel, showNewGameView: $showNewGameView)
+                if (showNewGameView) {
+                    NewGameView(viewModel: viewModel, showNewGameView: $showNewGameView)
+                }
                 Spacer()
                 Game(viewModel: viewModel)
                 Spacer()

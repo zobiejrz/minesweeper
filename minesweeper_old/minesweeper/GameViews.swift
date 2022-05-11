@@ -103,6 +103,7 @@ struct PauseView: View {
                         }
                         Button(action: {
                             withAnimation {
+                                self.showMenu = false
                                 self.viewModel.restart()
                             }
                         })

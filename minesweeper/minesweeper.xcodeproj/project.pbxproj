@@ -7,48 +7,79 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF24CF2324B2D0A800695808 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24CF2224B2D0A800695808 /* Color.swift */; };
-		AF24CF2524B2D63600695808 /* GameViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24CF2424B2D63600695808 /* GameViews.swift */; };
-		AF24FB0624A29C180021DC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB0524A29C180021DC2A /* AppDelegate.swift */; };
-		AF24FB0824A29C180021DC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB0724A29C180021DC2A /* SceneDelegate.swift */; };
-		AF24FB0C24A29C200021DC2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF24FB0B24A29C200021DC2A /* Assets.xcassets */; };
-		AF24FB0F24A29C200021DC2A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF24FB0E24A29C200021DC2A /* Preview Assets.xcassets */; };
-		AF24FB1224A29C200021DC2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF24FB1024A29C200021DC2A /* LaunchScreen.storyboard */; };
-		AF24FB1A24A29C380021DC2A /* MineSweeperGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */; };
-		AF28EA4F24A2BF4100C67AE0 /* Array+Remove.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */; };
-		AF28EA5124A2CEF900C67AE0 /* Array+Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */; };
-		AF410B6924A41F8800700BB9 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF410B6824A41F8800700BB9 /* GridLayout.swift */; };
-		AF7F655D24A4271B00BEA73A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7F655C24A4271B00BEA73A /* ContentView.swift */; };
-		AFA8FBA024A2A4D9006FBD39 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */; };
-		AFA8FBA224A2A4D9006FBD39 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */; };
-		AFA8FBA524A2A56A006FBD39 /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */; };
-		AFCF3A5A24A2A2F700286DF5 /* MineSweeperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */; };
+		AFB2D21426D1AE0B0034AE34 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D21326D1AE0B0034AE34 /* Tests_iOS.swift */; };
+		AFB2D21F26D1AE0B0034AE34 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D21E26D1AE0B0034AE34 /* Tests_macOS.swift */; };
+		AFB2D22126D1AE0B0034AE34 /* minesweeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F526D1AE090034AE34 /* minesweeper.xcdatamodeld */; };
+		AFB2D22226D1AE0B0034AE34 /* minesweeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F526D1AE090034AE34 /* minesweeper.xcdatamodeld */; };
+		AFB2D22326D1AE0B0034AE34 /* minesweeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F726D1AE090034AE34 /* minesweeperApp.swift */; };
+		AFB2D22426D1AE0B0034AE34 /* minesweeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F726D1AE090034AE34 /* minesweeperApp.swift */; };
+		AFB2D22526D1AE0B0034AE34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F826D1AE090034AE34 /* ContentView.swift */; };
+		AFB2D22626D1AE0B0034AE34 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F826D1AE090034AE34 /* ContentView.swift */; };
+		AFB2D22726D1AE0B0034AE34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F926D1AE090034AE34 /* Persistence.swift */; };
+		AFB2D22826D1AE0B0034AE34 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2D1F926D1AE090034AE34 /* Persistence.swift */; };
+		AFB2D22926D1AE0B0034AE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB2D1FA26D1AE0A0034AE34 /* Assets.xcassets */; };
+		AFB2D22A26D1AE0B0034AE34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFB2D1FA26D1AE0A0034AE34 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AFB2D21026D1AE0B0034AE34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFB2D1F026D1AE090034AE34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFB2D1FE26D1AE0A0034AE34;
+			remoteInfo = "minesweeper (iOS)";
+		};
+		AFB2D21B26D1AE0B0034AE34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFB2D1F026D1AE090034AE34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFB2D20626D1AE0A0034AE34;
+			remoteInfo = "minesweeper (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		AF0116AA24A437EB005C8B5B /* minesweeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = minesweeper.entitlements; sourceTree = "<group>"; };
-		AF24CF2224B2D0A800695808 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		AF24CF2424B2D63600695808 /* GameViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViews.swift; sourceTree = "<group>"; };
-		AF24FB0224A29C180021DC2A /* Minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF24FB0524A29C180021DC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF24FB0724A29C180021DC2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF24FB0B24A29C200021DC2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF24FB0E24A29C200021DC2A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AF24FB1124A29C200021DC2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF24FB1324A29C200021DC2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSweeperGame.swift; sourceTree = "<group>"; };
-		AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Remove.swift"; sourceTree = "<group>"; };
-		AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Point.swift"; sourceTree = "<group>"; };
-		AF410B6824A41F8800700BB9 /* GridLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
-		AF7F655C24A4271B00BEA73A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
-		AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
-		AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
-		AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSweeperViewModel.swift; sourceTree = "<group>"; };
+		AFB2D1F626D1AE090034AE34 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		AFB2D1F726D1AE090034AE34 /* minesweeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minesweeperApp.swift; sourceTree = "<group>"; };
+		AFB2D1F826D1AE090034AE34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AFB2D1F926D1AE090034AE34 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AFB2D1FA26D1AE0A0034AE34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFB2D1FF26D1AE0A0034AE34 /* minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB2D20226D1AE0A0034AE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB2D20726D1AE0A0034AE34 /* minesweeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minesweeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB2D20926D1AE0A0034AE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB2D20A26D1AE0A0034AE34 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		AFB2D20F26D1AE0B0034AE34 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB2D21326D1AE0B0034AE34 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		AFB2D21526D1AE0B0034AE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFB2D21A26D1AE0B0034AE34 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB2D21E26D1AE0B0034AE34 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		AFB2D22026D1AE0B0034AE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AF24FAFF24A29C180021DC2A /* Frameworks */ = {
+		AFB2D1FC26D1AE0A0034AE34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20426D1AE0A0034AE34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20C26D1AE0B0034AE34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D21726D1AE0B0034AE34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,92 +89,175 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF24FAF924A29C180021DC2A = {
+		AFB2D1EF26D1AE090034AE34 = {
 			isa = PBXGroup;
 			children = (
-				AF24FB0424A29C180021DC2A /* minesweeper */,
+				AFB2D1F426D1AE090034AE34 /* Shared */,
+				AFB2D20126D1AE0A0034AE34 /* iOS */,
+				AFB2D20826D1AE0A0034AE34 /* macOS */,
+				AFB2D21226D1AE0B0034AE34 /* Tests iOS */,
+				AFB2D21D26D1AE0B0034AE34 /* Tests macOS */,
+				AFB2D20026D1AE0A0034AE34 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		AF24FB0324A29C180021DC2A /* Products */ = {
+		AFB2D1F426D1AE090034AE34 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				AF24FB0224A29C180021DC2A /* Minesweeper.app */,
+				AFB2D1F726D1AE090034AE34 /* minesweeperApp.swift */,
+				AFB2D1F826D1AE090034AE34 /* ContentView.swift */,
+				AFB2D1F926D1AE090034AE34 /* Persistence.swift */,
+				AFB2D1FA26D1AE0A0034AE34 /* Assets.xcassets */,
+				AFB2D1F526D1AE090034AE34 /* minesweeper.xcdatamodeld */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AFB2D20026D1AE0A0034AE34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2D1FF26D1AE0A0034AE34 /* minesweeper.app */,
+				AFB2D20726D1AE0A0034AE34 /* minesweeper.app */,
+				AFB2D20F26D1AE0B0034AE34 /* Tests iOS.xctest */,
+				AFB2D21A26D1AE0B0034AE34 /* Tests macOS.xctest */,
 			);
 			name = Products;
-			path = ..;
 			sourceTree = "<group>";
 		};
-		AF24FB0424A29C180021DC2A /* minesweeper */ = {
+		AFB2D20126D1AE0A0034AE34 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AF0116AA24A437EB005C8B5B /* minesweeper.entitlements */,
-				AF24FB0524A29C180021DC2A /* AppDelegate.swift */,
-				AF24FB0724A29C180021DC2A /* SceneDelegate.swift */,
-				AF24CF2424B2D63600695808 /* GameViews.swift */,
-				AF7F655C24A4271B00BEA73A /* ContentView.swift */,
-				AFCF3A5924A2A2F700286DF5 /* MineSweeperViewModel.swift */,
-				AF24FB1924A29C380021DC2A /* MineSweeperGame.swift */,
-				AFA8FB9C24A2A4D8006FBD39 /* Cardify.swift */,
-				AFA8FB9E24A2A4D8006FBD39 /* Grid.swift */,
-				AF410B6824A41F8800700BB9 /* GridLayout.swift */,
-				AFA8FBA424A2A56A006FBD39 /* Array+Identifiable.swift */,
-				AF28EA5024A2CEF900C67AE0 /* Array+Point.swift */,
-				AF28EA4E24A2BF4100C67AE0 /* Array+Remove.swift */,
-				AF24CF2224B2D0A800695808 /* Color.swift */,
-				AF24FB0324A29C180021DC2A /* Products */,
-				AF24FB0B24A29C200021DC2A /* Assets.xcassets */,
-				AF24FB1024A29C200021DC2A /* LaunchScreen.storyboard */,
-				AF24FB1324A29C200021DC2A /* Info.plist */,
-				AF24FB0D24A29C200021DC2A /* Preview Content */,
+				AFB2D20226D1AE0A0034AE34 /* Info.plist */,
 			);
-			path = minesweeper;
+			path = iOS;
 			sourceTree = "<group>";
 		};
-		AF24FB0D24A29C200021DC2A /* Preview Content */ = {
+		AFB2D20826D1AE0A0034AE34 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				AF24FB0E24A29C200021DC2A /* Preview Assets.xcassets */,
+				AFB2D20926D1AE0A0034AE34 /* Info.plist */,
+				AFB2D20A26D1AE0A0034AE34 /* macOS.entitlements */,
 			);
-			path = "Preview Content";
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		AFB2D21226D1AE0B0034AE34 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2D21326D1AE0B0034AE34 /* Tests_iOS.swift */,
+				AFB2D21526D1AE0B0034AE34 /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		AFB2D21D26D1AE0B0034AE34 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				AFB2D21E26D1AE0B0034AE34 /* Tests_macOS.swift */,
+				AFB2D22026D1AE0B0034AE34 /* Info.plist */,
+			);
+			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF24FB0124A29C180021DC2A /* minesweeper */ = {
+		AFB2D1FE26D1AE0A0034AE34 /* minesweeper (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF24FB1624A29C200021DC2A /* Build configuration list for PBXNativeTarget "minesweeper" */;
+			buildConfigurationList = AFB2D22D26D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "minesweeper (iOS)" */;
 			buildPhases = (
-				AF24FAFE24A29C180021DC2A /* Sources */,
-				AF24FAFF24A29C180021DC2A /* Frameworks */,
-				AF24FB0024A29C180021DC2A /* Resources */,
+				AFB2D1FB26D1AE0A0034AE34 /* Sources */,
+				AFB2D1FC26D1AE0A0034AE34 /* Frameworks */,
+				AFB2D1FD26D1AE0A0034AE34 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = minesweeper;
-			productName = minesweeper;
-			productReference = AF24FB0224A29C180021DC2A /* Minesweeper.app */;
+			name = "minesweeper (iOS)";
+			productName = "minesweeper (iOS)";
+			productReference = AFB2D1FF26D1AE0A0034AE34 /* minesweeper.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AFB2D20626D1AE0A0034AE34 /* minesweeper (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFB2D23026D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "minesweeper (macOS)" */;
+			buildPhases = (
+				AFB2D20326D1AE0A0034AE34 /* Sources */,
+				AFB2D20426D1AE0A0034AE34 /* Frameworks */,
+				AFB2D20526D1AE0A0034AE34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "minesweeper (macOS)";
+			productName = "minesweeper (macOS)";
+			productReference = AFB2D20726D1AE0A0034AE34 /* minesweeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFB2D20E26D1AE0B0034AE34 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFB2D23326D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				AFB2D20B26D1AE0B0034AE34 /* Sources */,
+				AFB2D20C26D1AE0B0034AE34 /* Frameworks */,
+				AFB2D20D26D1AE0B0034AE34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFB2D21126D1AE0B0034AE34 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = AFB2D20F26D1AE0B0034AE34 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		AFB2D21926D1AE0B0034AE34 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFB2D23626D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				AFB2D21626D1AE0B0034AE34 /* Sources */,
+				AFB2D21726D1AE0B0034AE34 /* Frameworks */,
+				AFB2D21826D1AE0B0034AE34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFB2D21C26D1AE0B0034AE34 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = AFB2D21A26D1AE0B0034AE34 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		AF24FAFA24A29C180021DC2A /* Project object */ = {
+		AFB2D1F026D1AE090034AE34 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Ben Zobrist";
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					AF24FB0124A29C180021DC2A = {
-						CreatedOnToolsVersion = 11.5;
+					AFB2D1FE26D1AE0A0034AE34 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					AFB2D20626D1AE0A0034AE34 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					AFB2D20E26D1AE0B0034AE34 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = AFB2D1FE26D1AE0A0034AE34;
+					};
+					AFB2D21926D1AE0B0034AE34 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = AFB2D20626D1AE0A0034AE34;
 					};
 				};
 			};
-			buildConfigurationList = AF24FAFD24A29C180021DC2A /* Build configuration list for PBXProject "minesweeper" */;
+			buildConfigurationList = AFB2D1F326D1AE090034AE34 /* Build configuration list for PBXProject "minesweeper" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,65 +265,108 @@
 				en,
 				Base,
 			);
-			mainGroup = AF24FAF924A29C180021DC2A;
-			productRefGroup = AF24FB0324A29C180021DC2A /* Products */;
+			mainGroup = AFB2D1EF26D1AE090034AE34;
+			productRefGroup = AFB2D20026D1AE0A0034AE34 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF24FB0124A29C180021DC2A /* minesweeper */,
+				AFB2D1FE26D1AE0A0034AE34 /* minesweeper (iOS) */,
+				AFB2D20626D1AE0A0034AE34 /* minesweeper (macOS) */,
+				AFB2D20E26D1AE0B0034AE34 /* Tests iOS */,
+				AFB2D21926D1AE0B0034AE34 /* Tests macOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF24FB0024A29C180021DC2A /* Resources */ = {
+		AFB2D1FD26D1AE0A0034AE34 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF24FB1224A29C200021DC2A /* LaunchScreen.storyboard in Resources */,
-				AF24FB0F24A29C200021DC2A /* Preview Assets.xcassets in Resources */,
-				AF24FB0C24A29C200021DC2A /* Assets.xcassets in Resources */,
+				AFB2D22926D1AE0B0034AE34 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20526D1AE0A0034AE34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB2D22A26D1AE0B0034AE34 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20D26D1AE0B0034AE34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D21826D1AE0B0034AE34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF24FAFE24A29C180021DC2A /* Sources */ = {
+		AFB2D1FB26D1AE0A0034AE34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF28EA5124A2CEF900C67AE0 /* Array+Point.swift in Sources */,
-				AFA8FBA024A2A4D9006FBD39 /* Cardify.swift in Sources */,
-				AF7F655D24A4271B00BEA73A /* ContentView.swift in Sources */,
-				AF28EA4F24A2BF4100C67AE0 /* Array+Remove.swift in Sources */,
-				AF24CF2524B2D63600695808 /* GameViews.swift in Sources */,
-				AF410B6924A41F8800700BB9 /* GridLayout.swift in Sources */,
-				AF24CF2324B2D0A800695808 /* Color.swift in Sources */,
-				AF24FB1A24A29C380021DC2A /* MineSweeperGame.swift in Sources */,
-				AF24FB0624A29C180021DC2A /* AppDelegate.swift in Sources */,
-				AFA8FBA224A2A4D9006FBD39 /* Grid.swift in Sources */,
-				AFCF3A5A24A2A2F700286DF5 /* MineSweeperViewModel.swift in Sources */,
-				AFA8FBA524A2A56A006FBD39 /* Array+Identifiable.swift in Sources */,
-				AF24FB0824A29C180021DC2A /* SceneDelegate.swift in Sources */,
+				AFB2D22326D1AE0B0034AE34 /* minesweeperApp.swift in Sources */,
+				AFB2D22726D1AE0B0034AE34 /* Persistence.swift in Sources */,
+				AFB2D22126D1AE0B0034AE34 /* minesweeper.xcdatamodeld in Sources */,
+				AFB2D22526D1AE0B0034AE34 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20326D1AE0A0034AE34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB2D22426D1AE0B0034AE34 /* minesweeperApp.swift in Sources */,
+				AFB2D22826D1AE0B0034AE34 /* Persistence.swift in Sources */,
+				AFB2D22226D1AE0B0034AE34 /* minesweeper.xcdatamodeld in Sources */,
+				AFB2D22626D1AE0B0034AE34 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D20B26D1AE0B0034AE34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB2D21426D1AE0B0034AE34 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB2D21626D1AE0B0034AE34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFB2D21F26D1AE0B0034AE34 /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		AF24FB1024A29C200021DC2A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF24FB1124A29C200021DC2A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		AFB2D21126D1AE0B0034AE34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFB2D1FE26D1AE0A0034AE34 /* minesweeper (iOS) */;
+			targetProxy = AFB2D21026D1AE0B0034AE34 /* PBXContainerItemProxy */;
 		};
-/* End PBXVariantGroup section */
+		AFB2D21C26D1AE0B0034AE34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFB2D20626D1AE0A0034AE34 /* minesweeper (macOS) */;
+			targetProxy = AFB2D21B26D1AE0B0034AE34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		AF24FB1424A29C200021DC2A /* Debug */ = {
+		AFB2D22B26D1AE0B0034AE34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,6 +392,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -259,17 +417,15 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		AF24FB1524A29C200021DC2A /* Release */ = {
+		AFB2D22C26D1AE0B0034AE34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,6 +451,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -313,84 +470,257 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AFB2D22E26D1AE0B0034AE34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.benzobrist.minesweeper;
+				PRODUCT_NAME = minesweeper;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFB2D22F26D1AE0B0034AE34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.benzobrist.minesweeper;
+				PRODUCT_NAME = minesweeper;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		AF24FB1724A29C200021DC2A /* Debug */ = {
+		AFB2D23126D1AE0B0034AE34 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = minesweeper/minesweeper.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"minesweeper/Preview Content\"";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 58X7XVG57X;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = minesweeper/Info.plist;
+				INFOPLIST_FILE = macOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
-				PRODUCT_NAME = Minesweeper;
-				SUPPORTS_MACCATALYST = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.benzobrist.minesweeper;
+				PRODUCT_NAME = minesweeper;
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		AF24FB1824A29C200021DC2A /* Release */ = {
+		AFB2D23226D1AE0B0034AE34 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = minesweeper/minesweeper.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"minesweeper/Preview Content\"";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 58X7XVG57X;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = minesweeper/Info.plist;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.benzobrist.minesweeper;
+				PRODUCT_NAME = minesweeper;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AFB2D23426D1AE0B0034AE34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.benzobrist.minesweeper;
-				PRODUCT_NAME = Minesweeper;
-				SUPPORTS_MACCATALYST = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.benzobrist.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "minesweeper (iOS)";
+			};
+			name = Debug;
+		};
+		AFB2D23526D1AE0B0034AE34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.benzobrist.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "minesweeper (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFB2D23726D1AE0B0034AE34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.benzobrist.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "minesweeper (macOS)";
+			};
+			name = Debug;
+		};
+		AFB2D23826D1AE0B0034AE34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 58X7XVG57X;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.benzobrist.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "minesweeper (macOS)";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF24FAFD24A29C180021DC2A /* Build configuration list for PBXProject "minesweeper" */ = {
+		AFB2D1F326D1AE090034AE34 /* Build configuration list for PBXProject "minesweeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF24FB1424A29C200021DC2A /* Debug */,
-				AF24FB1524A29C200021DC2A /* Release */,
+				AFB2D22B26D1AE0B0034AE34 /* Debug */,
+				AFB2D22C26D1AE0B0034AE34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF24FB1624A29C200021DC2A /* Build configuration list for PBXNativeTarget "minesweeper" */ = {
+		AFB2D22D26D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "minesweeper (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF24FB1724A29C200021DC2A /* Debug */,
-				AF24FB1824A29C200021DC2A /* Release */,
+				AFB2D22E26D1AE0B0034AE34 /* Debug */,
+				AFB2D22F26D1AE0B0034AE34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB2D23026D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "minesweeper (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB2D23126D1AE0B0034AE34 /* Debug */,
+				AFB2D23226D1AE0B0034AE34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB2D23326D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB2D23426D1AE0B0034AE34 /* Debug */,
+				AFB2D23526D1AE0B0034AE34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFB2D23626D1AE0B0034AE34 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFB2D23726D1AE0B0034AE34 /* Debug */,
+				AFB2D23826D1AE0B0034AE34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AFB2D1F526D1AE090034AE34 /* minesweeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AFB2D1F626D1AE090034AE34 /* Shared.xcdatamodel */,
+			);
+			currentVersion = AFB2D1F626D1AE090034AE34 /* Shared.xcdatamodel */;
+			path = minesweeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = AF24FAFA24A29C180021DC2A /* Project object */;
+	rootObject = AFB2D1F026D1AE090034AE34 /* Project object */;
 }
